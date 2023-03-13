@@ -1,7 +1,7 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import  { Home } from "../components"
-export default function HomePage() {
+import React from 'react'
+import { CreatePost } from '../components'
+const CreatePostPage = () => {
   return (
     <div>
       <Head>
@@ -11,8 +11,10 @@ export default function HomePage() {
       </Head>
 
       <main className="sm:px-8 px-4 py-4 w-full min-h-[calc(100vh-28px)] bg-white">
-        <Home/>
+        <CreatePost />
       </main>
     </div>
   )
 }
+
+export default CreatePostPage
