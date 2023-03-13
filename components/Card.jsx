@@ -5,12 +5,12 @@ import { BsDownload } from 'react-icons/bs';
 
 const Card = ({_id,name,photo,prompt}) => {
   return (
-    <div className='rounded group relative shadow-card hover:shadow-cardhover card'>
+    <div className='rounded group relative shadow-card hover:shadow-cardhover bg-slate-100 card'>
       <Image
         src={photo}
         width={1280}
         height={720}
-        className="w-full h-auto object-contain rounded"
+        className="w-full h-auto object-contain rounded bg-white"
         alt={prompt}
         placeholder='blur'
         blurDataURL={photo}
