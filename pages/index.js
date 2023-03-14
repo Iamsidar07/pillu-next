@@ -6,6 +6,7 @@ export default function HomePage() {
       <Head>
         <title>Pillu</title>
         <meta name="description" content="Bring your imagination to life With pillu" />
+        <meta name="description" content="Bring your imagination to life with pillu" />
         <link rel="icon" href="/favicon.png" />
       </Head>
 
