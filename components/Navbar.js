@@ -4,7 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 const Navbar = () => {
     return (
-        <header className="w-full flex justify-between items-center px-2 sm:px-8 py-2 bg-white border-b-2 border-b-[#F1F1F4] ">
+        <header className="w-full flex justify-between items-center px-2 sm:px-8 py-2 bg-white 
+        border-b-[1px] border-b-[#F1F1F4] ">
             <Link href={"/"}>
                 <Image
                     src={logo}

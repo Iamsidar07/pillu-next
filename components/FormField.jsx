@@ -7,7 +7,7 @@ const FormField = ({labelName,name,isSupriseMe,handleChange,handleSupriseMe,valu
         <label htmlFor={name} className="font-bold" >{labelName}</label>
         {
           isSupriseMe && (
-            <button type='button' onClick={handleSupriseMe} className="bg-[#ECECF1] text-xs px-2 py-1 rounded-sm font-semibold">Suprise me</button>
+            <button type='button' onClick={handleSupriseMe} className="bg-[#e9e9e9] text-xs px-2 py-1 rounded-sm font-semibold">Suprise me</button>
           )
         }
       </div>

@@ -99,7 +99,7 @@ const CreatePost = () => {
                         isSupriseMe
                         handleSupriseMe={handleSupriseMe}
                     />
-                    <div className="relative w-64 h-64 flex items-center justify-center border border-gray-200  bg-gray-100 rounded-lg">
+                    <div className="relative max-w-sm  flex items-center justify-center border border-gray-200  bg-gray-100 ">
                         {
                             form.photo ?
                                 <Image
@@ -118,7 +118,7 @@ const CreatePost = () => {
                                     src={preview}
                                     width={1280}
                                     height={720}
-                                    className="h-full w-full max-w-lg object-contain opacity-60 "
+                                    className="h-full w-full  object-contain opacity-60 "
                                     alt='preview'
                                 />
                         }
