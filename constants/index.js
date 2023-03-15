@@ -1,5 +1,6 @@
 export const surpriseMePrompts = [
     'an armchair in the shape of an avocado',
+    'a teenage girl of indian descent with striking rainbow eyes stares at the camera with a deep read head scarf. kodachrome film',
     'a surrealist dream-like oil painting by Salvador Dalí of a cat playing checkers',
     'teddy bears shopping for groceries in Japan, ukiyo-e',
     'an oil painting by Matisse of a humanoid robot playing chess',

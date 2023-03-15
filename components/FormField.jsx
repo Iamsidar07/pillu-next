@@ -11,7 +11,7 @@ const FormField = ({labelName,name,isSupriseMe,handleChange,handleSupriseMe,valu
           )
         }
       </div>
-      <input id={name} name={name} required onChange={handleChange}  value={value} placeholder={placeholder} type={type} className="w-full rounded border-gray-200 border-[1px] text-gray-500 p-2 outline-none focus:ring-1 bg-gray-50" />
+      <input id={name} name={name} required onChange={handleChange}  value={value} placeholder={placeholder} type={type} spellCheck={false} className="w-full rounded border-gray-200 border-[1px] text-gray-500 p-2 outline-none focus:ring-1 bg-gray-50" />
     </div>
   )
 }
