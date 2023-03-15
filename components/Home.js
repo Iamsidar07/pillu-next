@@ -47,7 +47,7 @@ const Home = () => {
         }, 500))
     }
 
-    console.log(posts?.reverse())
+
     return (
         <section className='max-w-7xl mx-auto'>
             <div>
