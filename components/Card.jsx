@@ -7,7 +7,7 @@ const Card = ({ _id, name, photo, prompt, profilePhoto }) => {
 
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
   return (
-    <div className='rounded-xl h-full w-full group relative shadow-card hover:shadow-cardhover bg-slate-100 card'>
+    <div className='rounded-2xl h-full w-full group relative shadow-card hover:shadow-cardhover  card'>
       <Image
         src={photo}
         width={1080}
