@@ -76,8 +76,8 @@ const CreatePost = () => {
     return (
         <section className='max-w-7xl mx-auto'>
             <div>
-                <h1 className='font-bold text-3xl text-white'>Create</h1>
-                <p className="text-[16px] mt-2 text-gray-400 max-w-2xl">Transform your imaginations into  art with AI-powered creativity.</p>
+                <h1 className='font-bold text-4xl sm:text-7xl text-gradient mt-5 max-w-2xl'>Create Art</h1>
+                <p className=" text-xl sm:text-2xl mt-4 text-gray-500 max-w-2xl">Transform your imaginations into  art with AI-powered creativity.</p>
             </div>
             <form className='mt-16 max-w-3xl' onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-3">
@@ -118,7 +118,7 @@ const CreatePost = () => {
                                     src={preview}
                                     width={1280}
                                     height={720}
-                                    className="h-full w-full  object-contain bg-[#1e1e1e]  "
+                                    className="h-full w-full  object-contain "
                                     alt='preview'
                                 />
                         }

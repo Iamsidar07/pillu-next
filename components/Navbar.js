@@ -5,13 +5,13 @@ import Image from 'next/image'
 const Navbar = () => {
     return (
         <header className="w-full flex justify-between items-center px-2 sm:px-8 py-2 
-       sticky top-0 left-0 z-10 gradientbg1 ">
+       sticky top-0 left-0 z-10 bg-[#0D1117] ">
             <Link href={"/"}>
                 <Image
                     src={logo}
                     width={1280}
                     height={720}
-                    className="h-12 w-full object-contain"
+                    className="h-10 w-full object-contain"
                     alt='Pillu'
                     placeholder='blur'
                 />

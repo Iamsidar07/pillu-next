@@ -4,6 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -26,7 +27,7 @@
 }
 
 * {
-  font-family: "ColfaxAI", 'Fuzzy Bubbles', 'Poppins', sans-serif;
+  font-family:'Urbanist', "ColfaxAI", 'Fuzzy Bubbles', 'Poppins', sans-serif;
 }
 
 @media screen and (min-width: 480px) {
@@ -52,7 +53,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-background: #121212;
+  background: #0D1117;
 
 }
 
@@ -106,19 +107,20 @@ a {
 }
 
 .card {
-padding: 0;
+  padding: 0;
 }
 
 .read-the-docs {
   color: #888;
 }
 
-.gradientbg{
-background: rgb(30, 30, 30);
+.gradientbg {
+  background: rgb(30, 30, 30);
   background: linear-gradient(90deg, rgba(30, 30, 30, 1) 39%, rgba(0, 0, 0, 1) 80%);
 }
-.gradientbg1{
-background: rgb(48, 48, 48);
+
+.gradientbg1 {
+  background: rgb(48, 48, 48);
   background: radial-gradient(circle, rgba(48, 48, 48, 1) 21%, rgba(0, 0, 0, 1) 68%);
 }
 
@@ -131,7 +133,7 @@ background: rgb(48, 48, 48);
 /* Track */
 ::-webkit-scrollbar-track {
   background: #060606;
-    /* border-radius: 20px; */
+  /* border-radius: 20px; */
 }
 
 /* Handle */
@@ -143,4 +145,17 @@ background: rgb(48, 48, 48);
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.gradient {
+  background: rgb(22, 27, 34);
+  background: linear-gradient(90deg, rgba(22, 27, 34, 1) 44%, rgba(13, 17, 23, 1) 71%);
+}
+.cardshadow{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.text-gradient {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(90deg, #4ca5ff 2.34%, #b673f8 100.78%);
+  -webkit-background-clip: text;
 }

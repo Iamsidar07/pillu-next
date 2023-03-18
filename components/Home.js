@@ -51,8 +51,8 @@ const Home = () => {
     return (
         <section className='max-w-7xl mx-auto'>
             <div>
-                <h1 className='font-bold text-3xl text-white mt-5'>The community Showcase</h1>
-                <p className="text-xl mt-2 text-white max-w-2xl">Bring your <span className='text-[#f5a623] font-bold'>imagination</span> to life With pillu</p>
+                <h1 className='font-bold text-4xl sm:text-7xl text-gradient mt-5 max-w-2xl'>The community Showcase</h1>
+                <p className=" text-xl sm:text-2xl mt-4 text-white max-w-2xl">Bring your <span className='text-[#f5a623] font-bold'>imagination</span> to life With pillu</p>
             </div>
             <div className="mt-10">
                 <FormField

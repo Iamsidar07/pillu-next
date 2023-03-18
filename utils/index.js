@@ -17,7 +17,7 @@ export const downloadImage=async(_id,photo)=>{
         progress: undefined,
         theme: "dark",
     };
- toast.success("🎉 Downloading starting...",option)
+ toast.success("🎉 Download starting...",option)
  FileSaver.saveAs(photo,`download-${_id}.jpg`)
 }
 
