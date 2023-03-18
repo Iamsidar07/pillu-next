@@ -1,6 +1,6 @@
 import React from 'react'
 import Lottie from 'react-lottie';
-import animationUrl2 from "../assets/running-dog-3.json"
+import animationUrl2 from "../assets/fire.json"
 const Loader = () => {
     const defaultOptions = {
         loop: true,
