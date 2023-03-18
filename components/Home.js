@@ -35,7 +35,7 @@ const Home = () => {
         if (data?.length > 0) {
             return data.map((item) => <Card key={item._id} {...item} />)
         }
-        return <h2 className='text-lg mt-4'>{title}</h2>
+        return <h2 className='text-lg mt-4 text-[#f5a623]'>{title}</h2>
     }
 
     const handleSearchChange = (e) => {
@@ -51,15 +51,15 @@ const Home = () => {
     return (
         <section className='max-w-7xl mx-auto'>
             <div>
-                <h1 className='font-bold text-3xl text-black'>The community Showcase</h1>
-                <p className="text-[16px] mt-2 text-gray-400 max-w-2xl">Bring your imagination to life With pillu</p>
+                <h1 className='font-bold text-3xl text-white mt-5'>The community Showcase</h1>
+                <p className="text-xl mt-2 text-white max-w-2xl">Bring your <span className='text-[#f5a623] font-bold'>imagination</span> to life With pillu</p>
             </div>
-            <div className="mt-16">
+            <div className="mt-10">
                 <FormField
                     labelName={"Search Posts"}
                     type="text"
                     name="text"
-                    placeholder={"Search posts"}
+                    placeholder={"Start searching posts by names,prompts..."}
                     value={searchInput}
                     handleChange={handleSearchChange}
                 />
@@ -72,10 +72,10 @@ const Home = () => {
                         :
                         <>
                             {searchInput && <div className="mt-6">
-                                <p className='text-lg font-semibold text-gray-400'>Showing search result for <span className='font-medium text-black'>{searchInput}</span></p>
+                                <p className='text-lg font-semibold text-gray-400'>Showing search result for <span className='font-medium text-[#f5a623] '>{searchInput}</span></p>
                             </div>
                             }
-                            <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-3">
+                            <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-4">
                                 {searchInput ? <RenderCards data={searchResults} title={"No search result found."} /> : <RenderCards data={posts} title={"No post found"} />}
                             </div></>
                 }

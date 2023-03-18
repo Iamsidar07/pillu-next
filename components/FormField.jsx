@@ -4,14 +4,14 @@ const FormField = ({labelName,name,isSupriseMe,handleChange,handleSupriseMe,valu
   return (
     <div>
       <div className="flex items-center gap-2 mb-2">
-        <label htmlFor={name} className="font-bold" >{labelName}</label>
+        <label htmlFor={name} className="font-semibold text-white" >{labelName}</label>
         {
           isSupriseMe && (
-            <button type='button' onClick={handleSupriseMe} className="bg-[#e9e9e9] text-xs px-2 py-1 rounded-sm font-semibold">Suprise me</button>
+            <button type='button' onClick={handleSupriseMe} className="bg-[#f5a623] text-xs px-2 py-1 rounded-full font-semibold">Suprise me</button>
           )
         }
       </div>
-      <input id={name} name={name} required onChange={handleChange}  value={value} placeholder={placeholder} type={type} spellCheck={false} className="w-full rounded border-gray-200 border-[1px] text-gray-500 p-2 outline-none focus:ring-1 bg-gray-50" />
+      <input id={name} name={name} required onChange={handleChange} value={value} placeholder={placeholder} type={type} spellCheck={false} className="w-full rounded-2xl  text-white px-3 py-4 outline-none focus:ring-1 bg-[#1e1e1e] shadow-lg" />
     </div>
   )
 }

@@ -7,25 +7,35 @@ export const getRandomPrompt=()=>{
 }
 
 export const downloadImage=async(_id,photo)=>{
-    console.log(_id,photo)
- FileSaver.saveAs(photo,`download-${_id}.jpg`)
-}
-
-export const showToast = (message,type="error")=>{
     const option = {
-        position: "top-left",
+        position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
+    };
+ toast.success("🎉 Downloading starting...",option)
+ FileSaver.saveAs(photo,`download-${_id}.jpg`)
+}
+
+export const showToast = (message,type="error")=>{
+    const option = {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
     };
     if (type==="success") {
         toast.success(message, option);
-    }else if(type=="info"){
-        toast.info(message, option);
+    }else if(type=="warning"){
+        toast.warning(message, option);
     }else{
         toast.error(message, option);
     }

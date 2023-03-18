@@ -4,8 +4,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 const Navbar = () => {
     return (
-        <header className="w-full flex justify-between items-center px-2 sm:px-8 py-2 bg-white 
-        border-b-[1px] border-b-[#F1F1F4] ">
+        <header className="w-full flex justify-between items-center px-2 sm:px-8 py-2 
+       sticky top-0 left-0 z-10 gradientbg1 ">
             <Link href={"/"}>
                 <Image
                     src={logo}
@@ -17,7 +17,7 @@ const Navbar = () => {
                 />
             </Link>
             <Link href={"/create-post"}>
-                <p className="px-8 py-3 rounded-full bg-blue-500 text-white ">Create Post</p>
+                <p className="p-3 sm:px-8  sm:py-4 rounded-full bg-[#f5a623] text-xl ">Create Post</p>
             </Link>
         </header>
     )
