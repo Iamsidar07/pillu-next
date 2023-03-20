@@ -26,10 +26,10 @@ const CreatePost = () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ prompt: `${form.prompt} in art style of ${artStyle}` }),
+                    body: JSON.stringify({ prompt: `${form.prompt},${artStyle}` }),
                 })
                 const data = await response.json();
-                setForm({ ...form, prompt: `${form.prompt} in art style of ${artStyle}`, photo: `data:image/jpeg;base64,${data.photo}` })
+                setForm({ ...form, prompt: `${form.prompt},${artStyle}`, photo: `data:image/jpeg;base64,${data.photo}` })
             } catch (error) {
                 showToast(error);
             } finally {
