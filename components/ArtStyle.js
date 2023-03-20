@@ -5,7 +5,7 @@ const ArtStyle = ({artStyle,setArtStyle}) => {
     const [selectedStyle,setSelectedStyle]=useState(styles[0]);
   return (
     <div>
-          <h3 className='text-white mb-2'>Choose Art style</h3>
+          <h3 className='text-white mb-2 font-bold'>Choose Art style</h3>
           <div className='flex gap-2 flex-wrap'>
             {styles.map((style,i)=>{
                 return <p key={i} onClick={() => {
