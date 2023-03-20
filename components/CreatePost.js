@@ -5,6 +5,7 @@ import { preview } from "../assets"
 import { showToast } from '../utils'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import ArtStyle from './ArtStyle'
 
 const CreatePost = () => {
     const router = useRouter();
@@ -15,6 +16,7 @@ const CreatePost = () => {
     });
     const [generatingImage, setGeneratingImage] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [artStyle, setArtStyle] = useState("Art Nouveau")
     const generateImage = async () => {
         if (form.prompt) {
             setGeneratingImage(true);
@@ -24,10 +26,10 @@ const CreatePost = () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ prompt: form.prompt }),
+                    body: JSON.stringify({ prompt: `${form.prompt} in art style of ${artStyle}` }),
                 })
                 const data = await response.json();
-                setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` })
+                setForm({ ...form, prompt: `${form.prompt} in art style of ${artStyle}`, photo: `data:image/jpeg;base64,${data.photo}` })
             } catch (error) {
                 showToast(error);
             } finally {
@@ -65,21 +67,24 @@ const CreatePost = () => {
 
     }
     const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value })
-
+        let value=e.target.value;
+        setForm({ ...form, [e.target.name]:value})
     }
+
     const handleSupriseMe = () => {
         const randomPrompt = getRandomPrompt();
         setForm({ ...form, prompt: randomPrompt });
 
     }
+
+  
     return (
         <section className='max-w-7xl mx-auto'>
             <div>
                 <h1 className='font-bold text-4xl sm:text-7xl text-gradient mt-5 max-w-2xl'>Create Art</h1>
                 <p className=" text-xl sm:text-2xl mt-4 text-gray-500 max-w-2xl">Transform your imaginations into  art with AI-powered creativity.</p>
             </div>
-            <form className='mt-16 max-w-3xl' onSubmit={handleSubmit}>
+            <form className='mt-10 max-w-3xl' onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-3">
                     <FormField
                         labelName="Your name"
@@ -98,6 +103,11 @@ const CreatePost = () => {
                         handleChange={handleChange}
                         isSupriseMe
                         handleSupriseMe={handleSupriseMe}
+                      
+                    />
+                    <ArtStyle
+                    artStyle={artStyle}
+                    setArtStyle={setArtStyle}
                     />
                     <div className="relative max-w-sm  flex items-center justify-center  bg-white rounded ">
                         {

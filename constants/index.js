@@ -1,5 +1,11 @@
 export const surpriseMePrompts = [
     'an armchair in the shape of an avocado',
+    "A potrait of main character",
+    "A massive cosmic anomly",
+    "A beautiful sunset Painting",
+    "A secret Garden",
+    "A busting Shopping street",
+    "A futuristic cyberpunk city",
     'a teenage girl of indian descent with striking rainbow eyes stares at the camera with a deep read head scarf. kodachrome film',
     'a surrealist dream-like oil painting by Salvador Dalí of a cat playing checkers',
     'teddy bears shopping for groceries in Japan, ukiyo-e',
