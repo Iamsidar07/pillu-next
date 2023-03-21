@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 
-const ArtStyle = ({artStyle,setArtStyle}) => {
+const ArtStyle = ({setArtStyle}) => {
     const styles=["Avatar","Art Nouveau","Cinematic","3D Render","Oil Painting","Steampunk","B&W Film"];
-    const [selectedStyle,setSelectedStyle]=useState(styles[0]);
+    const [selectedStyle,setSelectedStyle]=useState("");
   return (
     <div>
           <h3 className='text-white mb-2 font-bold'>Choose Art style</h3>

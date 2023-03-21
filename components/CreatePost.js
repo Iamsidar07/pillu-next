@@ -16,7 +16,7 @@ const CreatePost = () => {
     });
     const [generatingImage, setGeneratingImage] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [artStyle, setArtStyle] = useState("Art Nouveau")
+    const [artStyle, setArtStyle] = useState("")
     const generateImage = async () => {
         if (form.prompt) {
             setGeneratingImage(true);
@@ -26,10 +26,10 @@ const CreatePost = () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ prompt: `${form.prompt},${artStyle}` }),
+                    body: JSON.stringify({ prompt: `${form.prompt} ${artStyle}` }),
                 })
                 const data = await response.json();
-                setForm({ ...form, prompt: `${form.prompt},${artStyle}`, photo: `data:image/jpeg;base64,${data.photo}` })
+                setForm({ ...form, prompt: `${form.prompt} ${artStyle}`, photo: `data:image/jpeg;base64,${data.photo}` })
             } catch (error) {
                 showToast(error);
             } finally {
@@ -106,7 +106,6 @@ const CreatePost = () => {
                       
                     />
                     <ArtStyle
-                    artStyle={artStyle}
                     setArtStyle={setArtStyle}
                     />
                     <div className="relative max-w-sm  flex items-center justify-center  bg-white rounded ">
