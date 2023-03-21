@@ -75,7 +75,7 @@ const Home = () => {
                                 <p className='text-lg font-semibold text-gray-400'>Showing search result for <span className='font-medium text-[#f5a623] '>{searchInput}</span></p>
                             </div>
                             }
-                            <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-4 sm:gap-5">
+                            <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-2 sm:gap-3">
                                 {searchInput ? <RenderCards data={searchResults} title={"No search result found."} /> : <RenderCards data={posts} title={"No post found"} />}
                             </div></>
                 }
