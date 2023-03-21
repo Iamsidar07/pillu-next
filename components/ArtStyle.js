@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const ArtStyle = ({artStyle,setArtStyle}) => {
-    const styles=["Art Nouveau","Cinematic","3D Render","Oil Painting","Steampunk","B&W Film"];
+    const styles=["Avatar","Art Nouveau","Cinematic","3D Render","Oil Painting","Steampunk","B&W Film"];
     const [selectedStyle,setSelectedStyle]=useState(styles[0]);
   return (
     <div>

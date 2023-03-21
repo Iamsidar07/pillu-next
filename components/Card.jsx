@@ -7,7 +7,7 @@ const Card = ({ _id, name, photo, prompt, profilePhoto }) => {
 
   const [isLoadingComplete, setIsLoadingComplete] = useState(!false);
   return (
-    <div className='rounded-2xl h-full w-full group relative  gradient card sm:hover:scale-105 transition-transform ease-out duration-200'>
+    <div className={`rounded-2xl h-full w-full group relative  gradient card sm:hover:scale-105 transition-transform ease-out duration-200  ${isLoadingComplete ? "animate-none" : "animate-pulse"}`}>
       <Image
         src={photo}
         width={1080}
@@ -19,7 +19,7 @@ const Card = ({ _id, name, photo, prompt, profilePhoto }) => {
         onLoadingComplete={() => setIsLoadingComplete(true)}
       />
       <div className="group-hover:flex flex-col max-h-[94%] hidden absolute bottom-0 left-0 right-0  gradientbg m-2 p-4 rounded-2xl">
-        <p className='text-white text-sm overflow-y-auto prompt'>{prompt}</p>
+        <p className='text-white text-sm overflow-y-auto break-words prompt'>{prompt}</p>
         <div className="mt-5 flex justify-between items-center gap-2">
           <div className="flex items-center gap-2">
             <div className='w-7 h-7 rounded-full bg-slate-100 '>
