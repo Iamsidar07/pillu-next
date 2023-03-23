@@ -27,7 +27,7 @@ export const downloadImage=async(_id,photo)=>{
         progress: undefined,
         theme: "dark",
     };
- toast.success("🎉 Download starting...",option)
+ toast.success("🎉 Starting Download...",option)
  FileSaver.saveAs(photo,`download-${_id}.jpg`)
 }
 
@@ -45,5 +45,5 @@ export const showToast = (message,type="error")=>{
 
 export const copy=(text)=>{
     navigator.clipboard.writeText(text);
-    toast.success('Copied Prompt',option);
+    toast.success('Prompt Copied',option);
 }

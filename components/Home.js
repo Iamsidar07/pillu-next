@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { Card, Loader, FormField } from "../components"
 import { showToast } from '../utils';
+import Modal from './Modal';
 const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [posts, setPosts] = useState(null);
     const [searchResults, setSearchResults] = useState(null);
     const [searchTimeout, setSearchTimeout] = useState(null);
     const [searchInput, setSearchInput] = useState('');
+    const [openImageId,setOpenImageId]=useState('');
     useEffect(() => {
         const fetchPosts = async () => {
             setIsLoading(true);
@@ -33,7 +35,7 @@ const Home = () => {
 
     const RenderCards = ({ data, title }) => {
         if (data?.length > 0) {
-            return data.map((item) => <Card key={item._id} {...item} />)
+            return data.map((item) => openImageId === item._id ? <Modal setOpenImageId={setOpenImageId} key={item._id} {...item} /> : <Card key={item._id}  {...item} setOpenImageId={setOpenImageId} />)
         }
         return <h2 className='text-lg mt-4 text-[#f5a623]'>{title}</h2>
     }
@@ -46,17 +48,19 @@ const Home = () => {
             setSearchResults(searchResults);
         }, 500))
     }
-
+    
+    
 
     return (
-        <section className='max-w-7xl mx-auto'>
+        <section className=' mx-auto'>
             <div>
                 <h1 className='font-bold text-4xl sm:text-7xl text-gradient mt-5 max-w-2xl'>The community Showcase</h1>
                 <p className=" text-xl sm:text-2xl mt-4 text-white max-w-2xl">Bring your <span className='text-[#f5a623] font-bold'>imagination</span> to life With pillu</p>
+                <p className='text-white mt-2'>50 Posts found</p>
             </div>
             <div className="mt-10">
                 <FormField
-                    labelName={"Search Posts"}
+                    labelName={`Search Posts ${posts?.length !== 0 && ("Over " + posts?.length +" images") }`}
                     type="text"
                     name="text"
                     placeholder={"Start searching posts by names,prompts..."}

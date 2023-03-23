@@ -3,24 +3,22 @@ import React, { useState } from 'react'
 import { copy, downloadImage } from "../utils"
 import { BsDownload } from 'react-icons/bs';
 
-const Card = ({ _id, name, photo, prompt, profilePhoto }) => {
+const Card = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
 
-  const [isLoadingComplete, setIsLoadingComplete] = useState(!false);
   return (
-    <div className={`rounded-2xl h-full w-full group relative  gradient card sm:hover:scale-[102%] transition-transform ease-out duration-200  ${isLoadingComplete ? "animate-none" : "animate-pulse backdrop-blur-sm"}`}>
+    <div onClick={() => setOpenImageId(_id)} className={`rounded-2xl h-full w-full group relative  gradient card sm:hover:scale-[102%] transition-transform ease-out duration-200`}>
       <Image
         src={photo}
         width={1080}
         height={1350}
-        className={` w-full h-auto object-contain rounded-xl  ${isLoadingComplete ? "animate-none" : "animate-pulse backdrop-blur-sm"}`}
+        className={` w-full h-auto object-contain rounded-xl`}
         alt={prompt}
         placeholder='blur'
         blurDataURL={photo}
-        onLoadingComplete={() => setIsLoadingComplete(true)}
       />
       <div className="group-hover:flex flex-col max-h-[90%] hidden absolute bottom-0 left-0 right-0  gradientbg m-1 p-4 rounded-2xl">
         <p className='text-white text-sm overflow-y-auto break-words prompt'>{prompt}</p>
-        <p onClick={() => copy(prompt)} className="bg-white cursor-pointer  backdrop-blur text-sm my-1 py-1 px-2 rounded-lg max-w-fit ">Copy Prompt</p>
+        
 
 
         <div className="mt-5 flex justify-between items-center gap-2">
@@ -32,11 +30,10 @@ const Card = ({ _id, name, photo, prompt, profilePhoto }) => {
                   src={profilePhoto}
                   width={40}
                   height={40}
-                  className={`w-full h-auto object-cover rounded-full  ${isLoadingComplete ? "animate-none" : "animate-pulse"}`}
+                  className={`w-full h-auto object-cover rounded-full`}
                   alt={name}
                   placeholder='blur'
                   blurDataURL={profilePhoto}
-                  onLoadingComplete={() => setIsLoadingComplete(true)}
                 />
               }
             </div>
