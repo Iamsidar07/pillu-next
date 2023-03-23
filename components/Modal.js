@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { RxCross1 } from 'react-icons/rx';
+
 import { FiCopy } from 'react-icons/fi';
 import { BsDownload } from 'react-icons/bs';
 import { copy, downloadImage } from '../utils';
@@ -10,10 +10,7 @@ const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
     return (
         <div className=' overflow-hidden fixed flex items-center justify-center top-0 bottom-0 left-0 right-0 inset-0 bg-black/80 z-20 p-2' onClick={() => setOpenImageId(null)}>
 
-            <div className="w-10 h-10 rounded-full gradientbg1 absolute top-1 left-1 m-2 flex items-center justify-center cursor-pointer z-50" onClick={() => setOpenImageId(null)}>
-                <RxCross1 size={20} color="white" />
-            </div>
-
+          
             <div className="max-w-4xl m-auto  h-fit max-h-screen flex flex-col-reverse sm:flex-row  justify-center gradientbg p-2 sm:p-5 rounded-lg sm:rounded-2xl gap-0 sm:gap-4 ">
                 <div className='py-5 sm:py-0 max-w-md'>
                     <div className="gradientbg1 rounded-lg sm:rounded-2xl p-4  ">
