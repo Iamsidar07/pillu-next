@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -27,7 +25,7 @@
 }
 
 * {
-  font-family:'Urbanist', "ColfaxAI", 'Fuzzy Bubbles', 'Poppins', sans-serif;
+  font-family:'Montserrat',"ColfaxAI", sans-serif;
 }
 
 @media screen and (min-width: 480px) {
