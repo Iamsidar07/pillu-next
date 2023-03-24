@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { RxCross1 } from 'react-icons/rx';
+
 import { FiCopy } from 'react-icons/fi';
 import { BsDownload } from 'react-icons/bs';
 import { copy, downloadImage } from '../utils';
