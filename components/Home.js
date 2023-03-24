@@ -53,7 +53,7 @@ const Home = () => {
     console.log(posts?.length)
 
     return (
-        <section className=' mx-auto'>
+        <section className='max-w-7xl mt-24 mx-auto'>
             <div>
                 <h1 className='font-bold text-4xl sm:text-7xl text-gradient mt-5 max-w-2xl'>The community Showcase</h1>
                 <p className=" text-xl sm:text-2xl mt-4 text-white max-w-2xl">Bring your <span className='text-[#f5a623] font-bold'>imagination</span> to life With pillu</p>

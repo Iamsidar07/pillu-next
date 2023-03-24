@@ -11,7 +11,7 @@ const ArtStyle = ({setArtStyle}) => {
                 return <p key={i} onClick={() => {
                     setSelectedStyle(style);
                     setArtStyle(style);
-                }} className={` ${selectedStyle === style ? "border-[#f5a623] scale-110 text-[#f5a623]" : "border-white text-white"} outline-none border-[1px]  rounded-full px-3 p-2 text-center cursor-pointer `}>{style}</p>
+                }} className={` ${selectedStyle === style ? "border-[#f5a623] scale-110 text-[#f5a623]" : "border-white text-white"} outline-none border-[1px]  rounded-lg border-[#181b23] px-3 py-1.5 sm:p-2 text-center cursor-pointer `}>{style}</p>
             })}
           </div>
 

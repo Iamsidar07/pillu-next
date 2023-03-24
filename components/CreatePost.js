@@ -79,7 +79,7 @@ const CreatePost = () => {
 
   
     return (
-        <section className='max-w-7xl mx-auto'>
+        <section className='max-w-7xl mt-24 mx-auto'>
             <div>
                 <h1 className='font-bold text-4xl sm:text-7xl text-gradient mt-5 max-w-2xl'>Create Art</h1>
                 <p className=" text-xl sm:text-2xl mt-4 text-gray-500 max-w-2xl">Transform your imaginations into  art with AI-powered creativity.</p>
@@ -142,15 +142,15 @@ const CreatePost = () => {
                     </div>
                 </div>
                 <div className="flex mt-5 gap-5">
-                    <button type='button' onClick={generateImage} className={"outline-none border-none bg-[#f5a623] rounded-full sm:w-auto w-full px-8 py-4 text-center text-xl"}>
+                    <button type='button' onClick={generateImage} className={"outline-none border-none bg-[#f5a623] rounded-full sm:w-auto w-full p-2.5 sm:px-6  sm:py-3.5 text-center font-bold"}>
                         {
                             generatingImage ? "Generating..." : "Generate Art"
                         }
                     </button>
                 </div>
                 <div className="my-10 gap-5">
-                    <p className='text-white text-lg'>Once you have created the image you want,you can share it with the world.</p>
-                    <button onClick={handleSubmit} type='button' className={"mt-2 outline-none border-[1px] text-[#f5a623] rounded-full border-[#f5a623] sm:w-auto w-full px-8 py-4 text-center text-xl"}>
+                    <p className='text-white'>Once you have created the image you want,you can share it with the world.</p>
+                    <button onClick={handleSubmit} type='button' className={"mt-2 outline-none border-[1px] text-[#f5a623] rounded-full border-[#f5a623] sm:w-auto w-full p-2.5 sm:px-6  sm:py-3.5 text-center font-bold"}>
                         {
                             isLoading ? "Sharing..." : "Share with the world"
                         }

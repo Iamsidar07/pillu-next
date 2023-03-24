@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Navbar = () => {
     return (
         <header className="w-full flex justify-between items-center px-2 sm:px-8 py-2 
-       sticky top-0 left-0 z-10 bg-[#0d111753] backdrop-blur ">
+       fixed top-0 left-0 right-0 z-10 bg-[#181b216b]  backdrop-blur ">
             <Link href={"/"}>
                 <Image
                     src={logo}
@@ -17,7 +17,7 @@ const Navbar = () => {
                 />
             </Link>
             <Link href={"/create-post"}>
-                <p className="p-3 sm:px-8  sm:py-4 rounded-full bg-[#f5a623] text-xl ">Create Post</p>
+                <p className="p-2.5 sm:px-6  sm:py-3.5 rounded-full bg-[#f5a623] ">Create Post</p>
             </Link>
         </header>
     )
