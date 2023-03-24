@@ -3,6 +3,7 @@ import React from 'react'
 
 import { FiCopy } from 'react-icons/fi';
 import { BsDownload } from 'react-icons/bs';
+import { RxCross1 } from 'react-icons/rx';
 import { copy, downloadImage } from '../utils';
 import { Zoom } from "react-reveal"
 const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
