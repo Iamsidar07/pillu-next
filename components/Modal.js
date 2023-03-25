@@ -59,7 +59,7 @@ const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
                             src={photo}
                             width={1980}
                             height={1080}
-                            className={`h-auto w-full object-contain rounded-lg sm:rounded-2xl`}
+                            className={`h-auto w-full object-contain rounded-lg sm:rounded-2xl max-w-xl`}
                             alt={prompt}
                             placeholder='blur'
                             blurDataURL={photo}
