@@ -54,7 +54,7 @@ const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId, photos 
                             </div>
                         </div>
                     </div>
-                    <div className='gradientbg flex items-center gap-5 overflow-x-auto overflow-y-hidden  p-2 w-full h-full rounded-lg sm:rounded-2xl max-w-xl'>
+                    <div className='gradientbg flex items-center gap-5 overflow-x-auto overflow-y-hidden  p-2 w-full h-full rounded-lg sm:rounded-2xl max-w-xl remove-scrollbar'>
                         {
                             photos?.length !== 0 ? photos.map((item) => <Image
                                 src={item}
