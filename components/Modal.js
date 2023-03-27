@@ -6,7 +6,7 @@ import { BsDownload } from 'react-icons/bs';
 import { RxCross1 } from 'react-icons/rx';
 import { copy, downloadImage } from '../utils';
 import { Zoom } from "react-reveal"
-const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
+const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId, photos }) => {
 
     return (
         <div className=' overflow-hidden fixed flex items-center justify-center top-0 bottom-0 left-0 right-0 inset-0 bg-black/80 z-20 p-2' onClick={() => setOpenImageId(null)}>
@@ -54,16 +54,28 @@ const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <Image
-                            src={photo}
-                            width={1980}
-                            height={1080}
-                            className={`h-auto w-full object-contain rounded-lg sm:rounded-2xl max-w-xl`}
-                            alt={prompt}
-                            placeholder='blur'
-                            blurDataURL={photo}
-                        />
+                    <div className='gradientbg overflow-x-auto overflow-y-hidden  p-2 w-full h-full rounded-lg sm:rounded-2xl max-w-xl'>
+                        {
+                            photos?.length !== 0 ? photos.map((item) => <Image
+                                src={item}
+                                width={1980}
+                                height={1080}
+                                className={`h-auto w-full object-contain `}
+                                alt={prompt}
+                                placeholder='blur'
+                                blurDataURL={item}
+                                key={item}
+                            />) : <Image
+                                src={photo}
+                                width={1980}
+                                height={1080}
+                                className={`h-auto w-full object-contain `}
+                                alt={prompt}
+                                placeholder='blur'
+                                blurDataURL={photo}
+                            />
+                        }
+
                     </div>
                 </div>
             </Zoom>
