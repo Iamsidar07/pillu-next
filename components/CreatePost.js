@@ -13,9 +13,10 @@ const CreatePost = () => {
         name: "",
         prompt: "",
         photo: "",
-        numberOfImages: 3,
+        photos: null,
+        numberOfImages: 2,
     });
-    const [responseData, setResposeData] = useState(null);
+    const [responseData, setResponseData] = useState(null);
     const [generatingImage, setGeneratingImage] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [artStyle, setArtStyle] = useState("");
@@ -23,6 +24,7 @@ const CreatePost = () => {
     const generateImage = async () => {
         if (form.prompt) {
             setGeneratingImage(true);
+            // console.log(form)
             try {
                 const response = await fetch("https://pillu.onrender.com/api/v1/dalle", {
                     method: "POST",
@@ -32,9 +34,11 @@ const CreatePost = () => {
                     body: JSON.stringify({ prompt: `${form.prompt} ${artStyle}`, numberOfImages: form.numberOfImages }),
                 })
                 const data = await response.json();
-                setForm({ ...form, prompt: `${form.prompt} ${artStyle}`, photo: `data:image/jpeg;base64,${data.photo[0]}` })
-                setSelectedImage(data.photo[0])
-                setResposeData(data.photo.map((item) => `data:image/jpeg;base64,${item}`))
+
+                // console.log(data)
+                // console.log({ responseData })
+                setForm({ ...form, prompt: `${form.prompt} ${artStyle}`, photo: `data:image/jpeg;base64,${data.photo}`, photos: data.photos.map((item) => `data:image/jpeg;base64,${item}`) });
+                setSelectedImage(form.photo);
             } catch (error) {
                 showToast(error);
             } finally {
@@ -62,6 +66,7 @@ const CreatePost = () => {
                 showToast(error)
             } finally {
                 setIsLoading(false);
+                // console.log(form)
                 showToast("Shared successfully with world.", "success")
             }
 
@@ -87,6 +92,8 @@ const CreatePost = () => {
     }
 
 
+    // console.log(form)
+    // console.log('After', { responseData })
 
     return (
         <section className='max-w-7xl mt-24 mx-auto'>
@@ -122,7 +129,7 @@ const CreatePost = () => {
                         placeholder="4"
                         value={form.numberOfImages}
                         handleChange={handleRange}
-                        max={6}
+                        max={4}
                         min={1}
                         step={1}
                     />
@@ -154,8 +161,9 @@ const CreatePost = () => {
                         }
                         {
                             generatingImage && (
-                                <div className="absolute inset-0 z-0 flex items-center justify-center bg-black/30 rounded-lg">
+                                <div className="absolute inset-0 z-0 flex flex-col items-center justify-center bg-black/30 rounded-lg">
                                     <Loader />
+                                    <p className='text-sm p-2 rounded  gradientbg backdrop-blur text-center mt-4'>This will take a minutes</p>
                                 </div>
                             )
                         }
@@ -164,12 +172,12 @@ const CreatePost = () => {
                 </div>
                 <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-2 sm:gap-3">
                     {
-                        responseData?.map((item) => (
+                        form.photos?.map((item, i) => (
                             <Image
                                 src={item}
                                 width={1280}
                                 height={720}
-                                className={`${form.numberOfImages >= 4 && "card"} hover:scale-105 duration-100 ease-in-out w-full h-full object-contain cursor-pointer  ${selectedImage === item ? "p-2 bg-[#f5a623]" : ""}`}
+                                className={`${form.numberOfImages >= 4 && "card"} hover:scale-105 duration-100 ease-in-out w-full h-full object-contain cursor-pointer  ${selectedImage === item ? "p-2 gradientbg" : ""}`}
                                 alt={item}
                                 placeholder='blur'
                                 blurDataURL={item}
@@ -177,7 +185,7 @@ const CreatePost = () => {
                                     setForm({ ...form, photo: item });
                                     setSelectedImage(item);
                                 }}
-                                key={item}
+                                key={i}
                             />)
                         )
                     }
