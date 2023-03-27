@@ -12,11 +12,14 @@ const CreatePost = () => {
     const [form, setForm] = useState({
         name: "",
         prompt: "",
-        photo: ""
+        photo: "",
+        numberOfImages: 3,
     });
+    const [responseData, setResposeData] = useState(null);
     const [generatingImage, setGeneratingImage] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const [artStyle, setArtStyle] = useState("")
+    const [artStyle, setArtStyle] = useState("");
+    const [selectedImage, setSelectedImage] = useState(null);
     const generateImage = async () => {
         if (form.prompt) {
             setGeneratingImage(true);
@@ -26,10 +29,12 @@ const CreatePost = () => {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ prompt: `${form.prompt} ${artStyle}` }),
+                    body: JSON.stringify({ prompt: `${form.prompt} ${artStyle}`, numberOfImages: form.numberOfImages }),
                 })
                 const data = await response.json();
-                setForm({ ...form, prompt: `${form.prompt} ${artStyle}`, photo: `data:image/jpeg;base64,${data.photo}` })
+                setForm({ ...form, prompt: `${form.prompt} ${artStyle}`, photo: `data:image/jpeg;base64,${data.photo[0]}` })
+                setSelectedImage(data.photo[0])
+                setResposeData(data.photo.map((item) => `data:image/jpeg;base64,${item}`))
             } catch (error) {
                 showToast(error);
             } finally {
@@ -67,8 +72,12 @@ const CreatePost = () => {
 
     }
     const handleChange = (e) => {
-        let value=e.target.value;
-        setForm({ ...form, [e.target.name]:value})
+        let value = e.target.value;
+        setForm({ ...form, [e.target.name]: value })
+    }
+
+    const handleRange = (e) => {
+        setForm({ ...form, numberOfImages: Number(e.target.value) })
     }
 
     const handleSupriseMe = () => {
@@ -77,7 +86,8 @@ const CreatePost = () => {
 
     }
 
-  
+
+
     return (
         <section className='max-w-7xl mt-24 mx-auto'>
             <div>
@@ -103,10 +113,21 @@ const CreatePost = () => {
                         handleChange={handleChange}
                         isSupriseMe
                         handleSupriseMe={handleSupriseMe}
-                      
+
+                    />
+                    <FormField
+                        labelName="Select number of images"
+                        type="range"
+                        name="numberOfImages"
+                        placeholder="4"
+                        value={form.numberOfImages}
+                        handleChange={handleRange}
+                        max={6}
+                        min={1}
+                        step={1}
                     />
                     <ArtStyle
-                    setArtStyle={setArtStyle}
+                        setArtStyle={setArtStyle}
                     />
                     <div className="relative max-w-sm  flex items-center justify-center  bg-white rounded ">
                         {
@@ -141,6 +162,27 @@ const CreatePost = () => {
 
                     </div>
                 </div>
+                <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-2 sm:gap-3">
+                    {
+                        responseData?.map((item) => (
+                            <Image
+                                src={item}
+                                width={1280}
+                                height={720}
+                                className={`${form.numberOfImages >= 4 && "card"} hover:scale-105 duration-100 ease-in-out w-full h-full object-contain cursor-pointer  ${selectedImage === item ? "p-2 bg-[#f5a623]" : ""}`}
+                                alt={item}
+                                placeholder='blur'
+                                blurDataURL={item}
+                                onClick={() => {
+                                    setForm({ ...form, photo: item });
+                                    setSelectedImage(item);
+                                }}
+                                key={item}
+                            />)
+                        )
+                    }
+                </div>
+
                 <div className="flex mt-5 gap-5">
                     <button type='button' onClick={generateImage} className={"outline-none border-none bg-[#f5a623] rounded-full sm:w-auto w-full p-2.5 sm:px-6  sm:py-3.5 text-center font-bold"}>
                         {

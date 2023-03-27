@@ -1,6 +1,6 @@
 import React from 'react'
 
-const FormField = ({labelName,name,isSupriseMe,handleChange,handleSupriseMe,value,placeholder,type}) => {
+const FormField = ({labelName,name,isSupriseMe,handleChange,handleSupriseMe,value,placeholder,type,...otherProps}) => {
   return (
     <div>
       <div className="flex items-center gap-2 mb-2">
@@ -11,7 +11,8 @@ const FormField = ({labelName,name,isSupriseMe,handleChange,handleSupriseMe,valu
           )
         }
       </div>
-      <input id={name} name={name} required onChange={handleChange} value={value} placeholder={placeholder} type={type} spellCheck={false} className="w-full rounded  text-white px-3 py-4 outline-none focus:ring-1 bg-[#181B21] shadow-lg" />
+      {type==="range" && <p className='text-white'>{value}</p>}
+      <input id={name} name={name} required onChange={handleChange} value={value} placeholder={placeholder} type={type} spellCheck={false} {...otherProps} className={`w-full rounded  text-white px-3 py-4 ${type === 'range' ? "focus:ring-0 max-w-xs cursor-pointer" :"focus:ring-1"} outline-none  bg-[#181B21] shadow-lg`} />
     </div>
   )
 }

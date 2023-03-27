@@ -50,7 +50,7 @@ const Home = () => {
     }
     
     const totalImageString = `Over ${posts?.length} images`;
-    console.log(posts?.length)
+
 
     return (
         <section className='max-w-7xl mt-24 mx-auto'>
