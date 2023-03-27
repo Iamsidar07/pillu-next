@@ -7,7 +7,7 @@ import { RxCross1 } from 'react-icons/rx';
 import { copy, downloadImage } from '../utils';
 import { Zoom } from "react-reveal"
 const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId, photos }) => {
-
+    console.log(photos)
     return (
         <div className=' overflow-hidden fixed flex items-center justify-center top-0 bottom-0 left-0 right-0 inset-0 bg-black/80 z-20 p-2' onClick={() => setOpenImageId(null)}>
 
@@ -54,7 +54,7 @@ const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId, photos 
                             </div>
                         </div>
                     </div>
-                    <div className='gradientbg overflow-x-auto overflow-y-hidden  p-2 w-full h-full rounded-lg sm:rounded-2xl max-w-xl'>
+                    <div className='gradientbg flex items-center gap-5 overflow-x-auto overflow-y-hidden  p-2 w-full h-full rounded-lg sm:rounded-2xl max-w-xl'>
                         {
                             photos?.length !== 0 ? photos.map((item) => <Image
                                 src={item}
