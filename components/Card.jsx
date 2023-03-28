@@ -30,7 +30,7 @@ const Card = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
                   src={profilePhoto}
                   width={40}
                   height={40}
-                  className={`w-full h-auto object-cover rounded`}
+                  className={`w-full h-auto object-cover rounded-full`}
                   alt={name}
                   placeholder='blur'
                   blurDataURL={profilePhoto}
@@ -40,7 +40,7 @@ const Card = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
             <p className='text-white text-sm'
             >{name}</p>
           </div>
-          <button type='button' onClick={() => downloadImage(_id, photo)} className='outline-none gradient border-none rounded p-2'>
+          <button type='button' onClick={() => downloadImage(_id, photo)} className='outline-none gradient border-none rounded-full p-2'>
 
             <BsDownload size={20} color={"white"} />
 
