@@ -99,7 +99,7 @@ const CreatePost = () => {
         <section className='max-w-7xl mt-20 mx-auto'>
             <div>
                 <h1 className='font-bold text-4xl sm:text-7xl text-gradient mt-5 max-w-2xl'>Create Art</h1>
-                <p className=" text-xl sm:text-2xl mt-4 text-gray-500 max-w-2xl">Transform your imaginations into  art with AI-powered creativity.</p>
+                <p className=" mt-4 text-gray-500 max-w-2xl">Transform your imaginations into  art with AI-powered creativity.</p>
             </div>
             <form className='mt-10 max-w-3xl' onSubmit={handleSubmit}>
                 <div className="flex flex-col gap-3">
