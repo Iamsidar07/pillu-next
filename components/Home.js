@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Card, Loader, FormField } from "../components"
 import { showToast } from '../utils';
 import Modal from './Modal';
+import { CiSearch } from 'react-icons/ci';
 const Home = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [posts, setPosts] = useState(null);
@@ -37,7 +38,7 @@ const Home = () => {
         if (data?.length > 0) {
             return data.map((item) => openImageId === item._id ? <Modal setOpenImageId={setOpenImageId} key={item._id} {...item} /> : <Card key={item._id}  {...item} setOpenImageId={setOpenImageId} />)
         }
-        return <h2 className='text-lg mt-4 text-[#f5a623]'>{title}</h2>
+        return <h2 className='text-normal mt-4 text-[#1dd79b]'>{title}</h2>
     }
 
     const handleSearchChange = (e) => {
@@ -53,20 +54,32 @@ const Home = () => {
 
 
     return (
-        <section className='max-w-7xl mt-24 mx-auto'>
+        <section className='max-w-7xl mt-20 mx-auto'>
             <div>
                 <h1 className='font-bold text-4xl sm:text-7xl text-gradient mt-5 max-w-2xl'>The community Showcase</h1>
-                <p className=" text-xl sm:text-2xl mt-4 text-white max-w-2xl">Bring your <span className='text-[#f5a623] font-bold'>imagination</span> to life With pillu</p>
+                <p className=" mt-4 text-white max-w-2xl">Bring your <span className='text-[#1dd79b] font-bold'>imagination</span> to life With pillu</p>
             </div>
-            <div className="mt-10">
-                <FormField
-                    labelName={`Search Posts ${posts?.length === undefined ? "" : totalImageString}`}
-                    type="text"
-                    name="text"
-                    placeholder={"Start searching posts by names,prompts..."}
-                    value={searchInput}
-                    handleChange={handleSearchChange}
-                />
+
+            <div className="mt-10 max-w-2xl mx-auto  space-y-3 ">
+                
+                <div className='flex items-center space-x-3'>
+                    <div className='flex-1'>
+                        <FormField
+                            // labelName={''}
+                            type="text"
+                            name="text"
+                            placeholder={"Start searching posts by names,prompts..."}
+                            value={searchInput}
+                            handleChange={handleSearchChange}
+                        />
+                    </div>
+                    <button type='button' className={"outline-none border-none bg-[#1dd79b] hover:bg-[#14e6a4] w-auto text-center rounded px-6 py-4 flex items-center space-x-2 "}>
+                        <span><CiSearch size={24} color={"white"} /></span> Search
+                    </button>
+                    
+                </div>
+                <p className='text-white text-sm'>{`Search Posts ${posts?.length === undefined ? "" : totalImageString}`}</p>
+
             </div>
             <div className="mt-10">
                 {
@@ -76,7 +89,7 @@ const Home = () => {
                         :
                         <>
                             {searchInput && <div className="mt-6">
-                                <p className='text-lg font-semibold text-gray-400'>Showing search result for <span className='font-medium text-[#f5a623] '>{searchInput}</span></p>
+                                <p className='text-normal font-semibold text-gray-400'>Showing search result for <span className='font-medium text-[#1dd79b] '>{searchInput}</span></p>
                             </div>
                             }
                             <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-2 sm:gap-3">

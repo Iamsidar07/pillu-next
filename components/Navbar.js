@@ -17,7 +17,7 @@ const Navbar = () => {
                 />
             </Link>
             <Link href={"/create-post"}>
-                <p className="p-2.5 sm:px-6  sm:py-3.5 rounded-full bg-[#f5a623] ">Create Post</p>
+                <p className="p-2.5 sm:px-6  sm:py-3.5 rounded bg-[#1dd79b] ">Create Post</p>
             </Link>
         </header>
     )

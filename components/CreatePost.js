@@ -96,7 +96,7 @@ const CreatePost = () => {
     // console.log('After', { responseData })
 
     return (
-        <section className='max-w-7xl mt-24 mx-auto'>
+        <section className='max-w-7xl mt-20 mx-auto'>
             <div>
                 <h1 className='font-bold text-4xl sm:text-7xl text-gradient mt-5 max-w-2xl'>Create Art</h1>
                 <p className=" text-xl sm:text-2xl mt-4 text-gray-500 max-w-2xl">Transform your imaginations into  art with AI-powered creativity.</p>
@@ -161,46 +161,49 @@ const CreatePost = () => {
                         }
                         {
                             generatingImage && (
-                                <div className="absolute inset-0 z-0 flex flex-col items-center justify-center bg-black/30 rounded-lg">
+                                <div className="absolute inset-0 z-0 flex flex-col items-center justify-center bg-black/30 rounded">
                                     <Loader />
-                                    <p className='text-sm p-2 rounded  gradientbg backdrop-blur text-center mt-4'>This will take a minutes</p>
+                                    <p className='text-sm p-2 rounded text-white backdrop-blur text-center mt-4 bg-[#1e2423]'>This will take a minutes</p>
                                 </div>
                             )
                         }
 
                     </div>
                 </div>
-                <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-2 sm:gap-3">
+                <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-4">
                     {
                         form.photos?.map((item, i) => (
-                            <Image
-                                src={item}
-                                width={1280}
-                                height={720}
-                                className={`${form.numberOfImages >= 4 && "card"} hover:scale-105 duration-100 ease-in-out w-full h-full object-contain cursor-pointer  ${selectedImage === item ? "p-2 gradientbg" : ""}`}
-                                alt={item}
-                                placeholder='blur'
-                                blurDataURL={item}
-                                onClick={() => {
-                                    setForm({ ...form, photo: item });
-                                    setSelectedImage(item);
-                                }}
-                                key={i}
-                            />)
+                            <div key={item} className={`${form.numberOfImages >= 4 && "card"} hover:scale-105 duration-75 ease-in-out  p-2 cursor-pointer rounded  ${selectedImage === item && "gradientbg"}`}>
+                                <Image
+                                    src={item}
+                                    width={1280}
+                                    height={720}
+                                    className={`w-full h-full object-contain cursor-pointer rounded`}
+                                    alt={item}
+                                    placeholder='blur'
+                                    blurDataURL={item}
+                                    onClick={() => {
+                                        setForm({ ...form, photo: item });
+                                        setSelectedImage(item);
+                                    }}
+                                    key={i}
+                                />
+                            </div>
+                        )
                         )
                     }
                 </div>
 
                 <div className="flex mt-5 gap-5">
-                    <button type='button' onClick={generateImage} className={"outline-none border-none bg-[#f5a623] rounded-full sm:w-auto w-full p-2.5 sm:px-6  sm:py-3.5 text-center font-bold"}>
+                    <button type='button' onClick={generateImage} className={"outline-none border-none bg-[#1dd79b] hover:text-white rounded sm:w-auto w-full text-center px-[12px] py-[8px]"}>
                         {
                             generatingImage ? "Generating..." : "Generate Art"
                         }
                     </button>
                 </div>
-                <div className="my-10 gap-5">
+                <div className="mt-6 gap-5">
                     <p className='text-white'>Once you have created the image you want,you can share it with the world.</p>
-                    <button onClick={handleSubmit} type='button' className={"mt-2 outline-none border-[1px] text-[#f5a623] rounded-full border-[#f5a623] sm:w-auto w-full p-2.5 sm:px-6  sm:py-3.5 text-center font-bold"}>
+                    <button onClick={handleSubmit} type='button' className={"mt-2 outline-none border-[1px] text-[#1dd79b] hover:text-white rounded border-[#1dd79b] sm:w-auto w-full py-[8px] px-[12px] text-center"}>
                         {
                             isLoading ? "Sharing..." : "Share with the world"
                         }
