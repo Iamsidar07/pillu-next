@@ -23,7 +23,7 @@ const Card = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
 
         <div className="mt-5 flex justify-between items-center gap-2">
           <div className="flex items-center gap-2">
-            <div className='w-7 h-7 rounded bg-slate-100 '>
+            <div className='w-7 h-7 rounded-full bg-slate-100 '>
 
               {profilePhoto &&
                 <Image
