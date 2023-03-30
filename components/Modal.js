@@ -11,7 +11,7 @@ const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId, photos 
     return (
         <div className=' overflow-hidden fixed flex items-center justify-center top-0 bottom-0 left-0 right-0 inset-0 bg-black/80 z-20 p-2' onClick={() => setOpenImageId(null)}>
 
-            <div className="w-10 h-10 rounded gradientbg1 absolute top-1 left-1 m-2  items-center justify-center cursor-pointer z-50 hidden sm:flex" onClick={() => setOpenImageId(null)}>
+            <div className="w-10 h-10 rounded gradientbg1 absolute top-1 left-1 m-2  items-center justify-center cursor-pointer z-50 flex" onClick={() => setOpenImageId(null)}>
                 <RxCross1 size={20} color="white" />
             </div>
 
@@ -32,7 +32,7 @@ const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId, photos 
                                     <FiCopy size={16} color="white" />
                                     <p className='text-sm'> Copy prompt</p>
                                 </div>
-                                <div className='rounded px-4 py-1.5 space-x-2 my-2 text-white bg-[#1dd79b] hover:bg-[#f5a523e4] w-fit cursor-pointer flex items-center' onClick={() => downloadImage(_id, photo)}>
+                                <div className='rounded px-4 py-1.5 space-x-2 my-2 text-white bg-[#1dd79b] hover:bg-[#1dd79ce5] w-fit cursor-pointer flex items-center' onClick={() => downloadImage(_id, photo)}>
                                     <BsDownload size={16} color="white" />
                                     <p className='text-sm'>Download</p>
                                 </div>
@@ -54,7 +54,7 @@ const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId, photos 
                             </div>
                         </div>
                     </div>
-                    <div className='gradientbg flex items-center gap-5 overflow-x-auto overflow-y-hidden  p-2 w-full h-full rounded sm:rounded max-w-lg remove-scrollbar'>
+                    <div className='gradientbg flex items-center gap-5 overflow-x-auto overflow-y-hidden   w-full h-full rounded sm:rounded max-w-lg remove-scrollbar'>
                         {
                             photos?.length !== 0 ? photos.map((item) => <Image
                                 src={item}

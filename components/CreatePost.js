@@ -143,7 +143,7 @@ const CreatePost = () => {
                                     src={form.photo}
                                     width={1280}
                                     height={720}
-                                    className="w-full h-full object-contain"
+                                    className="w-full h-full object-contain "
                                     alt={form.prompt}
                                     placeholder='blur'
                                     blurDataURL={form.photo}
@@ -161,9 +161,9 @@ const CreatePost = () => {
                         }
                         {
                             generatingImage && (
-                                <div className="absolute inset-0 z-0 flex flex-col items-center justify-center bg-black/30 rounded">
+                                <div className="absolute inset-0 z-0 flex flex-col items-center justify-center gradientbg backdrop-blur-sm rounded">
                                     <Loader />
-                                    <p className='text-sm p-2 rounded text-white backdrop-blur text-center mt-4 bg-[#1e2423]'>This will take a minutes</p>
+                                    <p className='text-sm p-2 rounded text-white backdrop-blur text-center mt-4 bggradient'>This will take a minutes</p>
                                 </div>
                             )
                         }

@@ -50,7 +50,7 @@ const Home = () => {
         }, 500))
     }
     
-    const totalImageString = `Over ${posts?.length} images`;
+    const totalImageString = `Search Over ${posts?.length} images`;
 
 
     return (
@@ -73,12 +73,12 @@ const Home = () => {
                             handleChange={handleSearchChange}
                         />
                     </div>
-                    <button type='button' className={"outline-none border-none bg-[#1dd79b] hover:bg-[#14e6a4] w-auto text-center rounded px-6 py-4 flex items-center space-x-2 "}>
+                    <button type='button' className={"outline-none border-none bg-[#1dd79b] hover:bg-[#14e6a4] w-auto text-center rounded px-6 py-4 text-white items-center space-x-2 hidden sm:flex "}>
                         <span><CiSearch size={24} color={"white"} /></span> Search
                     </button>
                     
                 </div>
-                <p className='text-white text-sm'>{`Search Posts ${posts?.length === undefined ? "" : totalImageString}`}</p>
+                <p className='text-white text-xs'>{`${posts?.length === undefined ? "" : totalImageString}`}</p>
 
             </div>
             <div className="mt-10">
@@ -92,7 +92,7 @@ const Home = () => {
                                 <p className='text-normal font-semibold text-gray-400'>Showing search result for <span className='font-medium text-[#1dd79b] '>{searchInput}</span></p>
                             </div>
                             }
-                            <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-2 sm:gap-3">
+                            <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-1 sm:gap-3">
                                 {searchInput ? <RenderCards data={searchResults} title={"No search result found."} /> : <RenderCards data={posts} title={"No post found"} />}
                             </div></>
                 }
