@@ -6,7 +6,7 @@ import { BsDownload } from 'react-icons/bs';
 const Card = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
 
   return (
-    <div onClick={() => setOpenImageId(_id)} className={`rounded h-full w-full group relative  gradient card sm:hover:scale-[102%] transition-transform ease-out duration-200`}>
+    <div onClick={() => setOpenImageId(_id)} className={`rounded-lgh-full w-full group relative  gradient card sm:hover:scale-[102%] transition-transform ease-out duration-200`}>
       <Image
         src={photo}
         width={1080}
@@ -28,8 +28,8 @@ const Card = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
               {profilePhoto &&
                 <Image
                   src={profilePhoto}
-                  width={40}
-                  height={40}
+                  width={30}
+                  height={30}
                   className={`w-full h-auto object-cover rounded-full`}
                   alt={name}
                   placeholder='blur'
@@ -42,7 +42,7 @@ const Card = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId }) => {
           </div>
           <button type='button' onClick={() => downloadImage(_id, photo)} className='outline-none gradient border-none rounded-full p-2'>
 
-            <BsDownload size={20} color={"white"} />
+            <BsDownload size={14} color={"white"} />
 
           </button>
         </div>

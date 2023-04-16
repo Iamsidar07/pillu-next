@@ -11,8 +11,8 @@ const Modal = ({ _id, name, photo, prompt, profilePhoto, setOpenImageId, photos 
     return (
         <div className=' overflow-hidden fixed flex items-center justify-center top-0 bottom-0 left-0 right-0 inset-0 bg-black/80 z-20 p-2' onClick={() => setOpenImageId(null)}>
 
-            <div className="w-10 h-10 rounded gradientbg1 absolute top-1 left-1 m-2  items-center justify-center cursor-pointer z-50 flex" onClick={() => setOpenImageId(null)}>
-                <RxCross1 size={20} color="white" />
+            <div className="w-5 h-5 rounded gradientbg1 absolute top-1 left-1 m-2  items-center justify-center cursor-pointer z-50 flex" onClick={() => setOpenImageId(null)}>
+                <RxCross1 size={14} color="white" />
             </div>
 
             <Zoom bottom>

@@ -92,7 +92,7 @@ const Home = () => {
                                 <p className='text-normal font-semibold text-gray-400'>Showing search result for <span className='font-medium text-[#1dd79b] '>{searchInput}</span></p>
                             </div>
                             }
-                            <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-1 sm:gap-3">
+                            <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-1 sm:gap-3">
                                 {searchInput ? <RenderCards data={searchResults} title={"No search result found."} /> : <RenderCards data={posts} title={"No post found"} />}
                             </div></>
                 }

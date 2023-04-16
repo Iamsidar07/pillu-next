@@ -10,7 +10,7 @@ const CreatePostPage = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <main className="sm:px-8 px-4 py-4 w-full min-h-[calc(100vh-28px)]  max-w-6xl mx-auto">
+      <main className="sm:px-8 px-2 py-4 w-full min-h-[calc(100vh-28px)]  max-w-6xl mx-auto">
         <CreatePost />
       </main>
     </div>
