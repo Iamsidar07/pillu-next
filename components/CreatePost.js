@@ -170,10 +170,10 @@ const CreatePost = () => {
 
                     </div>
                 </div>
-                <div className=" mt-6 grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-1 gap-4">
+                <div className=" mt-2 grid grid-cols-1 sm:grid-cols-2 gap-1">
                     {
                         form.photos?.map((item, i) => (
-                            <div key={item} className={`${form.numberOfImages >= 4 && "card"} hover:scale-105 duration-75 ease-in-out  p-2 cursor-pointer rounded  ${selectedImage === item && "gradientbg"}`}>
+                            <div key={item} className={`hover:scale-105 duration-75 ease-in-out  p-2 cursor-pointer rounded  ${selectedImage === item && "gradientbg"}`}>
                                 <Image
                                     src={item}
                                     width={1280}
